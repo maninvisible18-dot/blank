@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIS Core: Student Grade Report | Academic Information System</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .btn-print-transcript {
+            background: #5cb85c;
+            color: #fff;
+            border: none;
+            padding: 7px 16px;
+            font-size: 13px;
+            cursor: pointer;
+            border-radius: 3px;
+            margin-bottom: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-print-transcript:hover {
+            background: #4cae4c;
+        }
+
+        .grade-report-box {
+            border: 1px solid #ccc;
+            padding: 14px;
+            font-size: 12px;
+        }
+
+        .grade-report-header {
+            text-align: center;
+            margin-bottom: 14px;
+        }
+
+        .grade-report-header h2 {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+
+        .grade-report-header p {
+            font-size: 12.5px;
+            margin-bottom: 2px;
+        }
+
+        .student-meta {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 16px;
+            font-size: 12.5px;
+        }
+
+        .student-meta td {
+            padding: 3px 6px;
+            vertical-align: top;
+        }
+
+        .student-meta td:first-child,
+        .student-meta td:nth-child(3) {
+            font-weight: bold;
+            width: 20%;
+            white-space: nowrap;
+        }
+
+        .semesters-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-bottom: 16px;
+        }
+
+        .semester-block {
+            border: 1px solid #ddd;
+        }
+
+        .semester-title {
+            background: #f5f5f5;
+            text-align: center;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 5px 8px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .sem-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11.5px;
+        }
+
+        .sem-table th {
+            background: #efefef;
+            padding: 4px 6px;
+            text-align: left;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+            font-size: 11px;
+        }
+
+        .sem-table td {
+            padding: 4px 6px;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: top;
+        }
+
+        .sem-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .sgpa-row td {
+            font-weight: bold;
+            background: #f9f9f9;
+            padding: 4px 6px;
+        }
+
+        @media print {
+
+            .profile-left,
+            .site-header,
+            .site-footer,
+            .btn-print-transcript {
+                display: none !important;
+            }
+
+            .profile-layout {
+                display: block;
+            }
+
+            .profile-right {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header class="site-header">
+            <a href="index.html" class="site-title">Academic Information System</a>
+            <a href="user-profile.html" class="header-tab">Profile</a>
+            <a href="index.html" class="logout-link">Log out</a>
+        </header>
+
+        <div class="profile-layout">
+            <!-- LEFT SIDEBAR -->
+            <div class="profile-left">
+                <div class="profile-avatar">V</div>
+                <table class="profile-info-table">
+                    <tr>
+                        <td>Name</td>
+                        <td>Vishwas Kisaniya</td>
+                    </tr>
+                    <tr>
+                        <td>SID</td>
+                        <td>22106027</td>
+                    </tr>
+                    <tr>
+                        <td>Branch</td>
+                        <td>Computer Science and Engineering (Data Science)</td>
+                    </tr>
+                </table>
+                <ul class="profile-menu">
+                    <li><a href="student-fee-payment.html">Fee Payment</a></li>
+                    <li><a href="academic-course-registration.html">Course Registration</a></li>
+                    <li><a href="add-drop-courses.html">Add &amp; Drop Courses</a></li>
+                    <li><a href="convocation-entry-pass.html">Convocation Entry Pass Form</a></li>
+                    <li><a href="grade-report.html"><strong>Grade Report</strong></a></li>
+                    <li><a href="grade-report-honours.html">Grade Report Honours - Minors</a></li>
+                    <li><a href="notices.html">Notices</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="institute-feedback.html">Institute Facilities Feedback</a></li>
+                    <li><a href="fee-receipt.html">Fee Receipt</a></li>
+                </ul>
+                <a href="change-password.html" class="btn-change-password">Change Password</a>
+            </div>
+
+            <!-- MAIN CONTENT -->
+            <div class="profile-right">
+
+                <button class="btn-print-transcript" onclick="window.print()">
+                    🖨 PRINT TRANSCRIPT
+                </button>
+
+                <div class="grade-report-box">
+                    <!-- Header -->
+                    <div class="grade-report-header">
+                        <p style="font-size:12px; font-weight:bold;">Grade Report</p>
+                        <h2>PUNJAB ENGINEERING COLLEGE, CHANDIGARH</h2>
+                        <p>(Deemed to be University)</p>
+                        <p><strong>Transcript of Academic Record</strong></p>
+                    </div>
+
+                    <!-- Student Meta -->
+                    <table class="student-meta">
+                        <tr>
+                            <td>SID:</td>
+                            <td>22106027</td>
+                            <td>Father's Name:</td>
+                            <td>Yogendra Kumar</td>
+                        </tr>
+                        <tr>
+                            <td>Student's Name:</td>
+                            <td>Vishwas Kisaniya</td>
+                            <td>Mother's Name:</td>
+                            <td>Suman</td>
+                        </tr>
+                        <tr>
+                            <td>Department:</td>
+                            <td>Computer Science and Engineering (Data Science)</td>
+                            <td>Batch:</td>
+                            <td>2022</td>
+                        </tr>
+                    </table>
+
+                    <!-- Semester Grid -->
+                    <div class="semesters-grid">
+
+                        <!-- Sem 1 -->
+                        <div class="semester-block">
+                            <div class="semester-title">Session: 2022-2023-1 &nbsp; Semester: 1</div>
+                            <table class="sem-table">
+                                <thead>
+                                    <tr>
+                                        <th>Course Name</th>
+                                        <th>Credits</th>
+                                        <th>Grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Applied Chemistry-I</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Introduction to Computing</td>
+                                        <td>4</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Engineering Drawing with CAD Software</td>
+                                        <td>3</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Introduction to Electronics &amp; Electrical Engineering</td>
+                                        <td>2</td>
+                                        <td>B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Calculus &amp; Ordinary Differential Equations</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Orientation</td>
+                                        <td>2</td>
+                                        <td>C</td>
+                                    </tr>
+                                    <tr class="sgpa-row">
+                                        <td colspan="2">SGPA: 8.00 &nbsp; Credits: 19</td>
+                                        <td>CGPA: 8.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Sem 2 -->
+                        <div class="semester-block">
+                            <div class="semester-title">Session: 2022-2023-2 &nbsp; Semester: 2</div>
+                            <table class="sem-table">
+                                <thead>
+                                    <tr>
+                                        <th>Course Name</th>
+                                        <th>Credits</th>
+                                        <th>Grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Introduction to Mechatronics</td>
+                                        <td>3</td>
+                                        <td>B+</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Introduction to Manufacturing</td>
+                                        <td>2</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Environmental Sciences-I</td>
+                                        <td>2</td>
+                                        <td>B+</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Environmental Sciences-II</td>
+                                        <td>2</td>
+                                        <td>B+</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Communication Skills &amp; Ethics</td>
+                                        <td>3</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Probability &amp; Statistics</td>
+                                        <td>4</td>
+                                        <td>C</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Electromagnetic Theory &amp; Quantum Physics</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                    </tr>
+                                    <tr class="sgpa-row">
+                                        <td colspan="2">SGPA: 7.80 &nbsp; Credits: 20</td>
+                                        <td>CGPA: 7.90</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Sem 3 -->
+                        <div class="semester-block">
+                            <div class="semester-title">Session: 2023-2024-1 &nbsp; Semester: 3</div>
+                            <table class="sem-table">
+                                <thead>
+                                    <tr>
+                                        <th>Course Name</th>
+                                        <th>Credits</th>
+                                        <th>Grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Data Structures and Algorithm</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Python for Data Science</td>
+                                        <td>4</td>
+                                        <td>B+</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Introduction to IoT</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Industrial Tour</td>
+                                        <td>2</td>
+                                        <td>B+</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Artificial Intelligence &amp; Machine Learning</td>
+                                        <td>3</td>
+                                        <td>C</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Arduino Programming &amp; Raspberry Pi</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                    </tr>
+                                    <tr class="sgpa-row">
+                                        <td colspan="2">SGPA: 6.71 &nbsp; Credits: 21</td>
+                                        <td>CGPA: 7.48</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Sem 4 -->
+                        <div class="semester-block">
+                            <div class="semester-title">Session: 2023-2024-2 &nbsp; Semester: 4</div>
+                            <table class="sem-table">
+                                <thead>
+                                    <tr>
+                                        <th>Course Name</th>
+                                        <th>Credits</th>
+                                        <th>Grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Analytical Tools for Data Science</td>
+                                        <td>4</td>
+                                        <td>B+</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Operating Systems</td>
+                                        <td>4</td>
+                                        <td>B+</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Data Acquisition &amp; Information Retrieval</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Basics of Economics</td>
+                                        <td>3</td>
+                                        <td>B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Computer Networks</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Student Counseling Cell</td>
+                                        <td>2</td>
+                                        <td>C</td>
+                                    </tr>
+                                    <tr class="sgpa-row">
+                                        <td colspan="2">SGPA: 7.19 &nbsp; Credits: 21</td>
+                                        <td>CGPA: 7.41</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Sem 5 -->
+                        <div class="semester-block">
+                            <div class="semester-title">Session: 2024-2025-1 &nbsp; Semester: 5</div>
+                            <table class="sem-table">
+                                <thead>
+                                    <tr>
+                                        <th>Course Name</th>
+                                        <th>Credits</th>
+                                        <th>Grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Machine Learning for Data Science</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Theory of Computation</td>
+                                        <td>4</td>
+                                        <td>B+</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Computer Networks &amp; Network Analysis</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Minor Project</td>
+                                        <td>3</td>
+                                        <td>B+</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Web Information Retrieval &amp; Crawling</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Natural Language Processing</td>
+                                        <td>4</td>
+                                        <td>C</td>
+                                    </tr>
+                                    <tr class="sgpa-row">
+                                        <td colspan="2">SGPA: 7.30 &nbsp; Credits: 23</td>
+                                        <td>CGPA: 7.38</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Sem 6 -->
+                        <div class="semester-block">
+                            <div class="semester-title">Session: 2024-2025-2 &nbsp; Semester: 6</div>
+                            <table class="sem-table">
+                                <thead>
+                                    <tr>
+                                        <th>Course Name</th>
+                                        <th>Credits</th>
+                                        <th>Grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Internship Part-I</td>
+                                        <td>6</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Internship Part-II</td>
+                                        <td>2</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Internship Part-III</td>
+                                        <td>4</td>
+                                        <td>C</td>
+                                    </tr>
+                                    <tr class="sgpa-row">
+                                        <td colspan="2">SGPA: 8.67 &nbsp; Credits: 12</td>
+                                        <td>CGPA: 7.52</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Sem 7 -->
+                        <div class="semester-block">
+                            <div class="semester-title">Session: 2025-2026-1 &nbsp; Semester: 7</div>
+                            <table class="sem-table">
+                                <thead>
+                                    <tr>
+                                        <th>Course Name</th>
+                                        <th>Credits</th>
+                                        <th>Grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Major Project-I</td>
+                                        <td>2</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Deep Learning</td>
+                                        <td>4</td>
+                                        <td>B+</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Advanced Artificial Intelligence</td>
+                                        <td>4</td>
+                                        <td>B+</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Strategic Management</td>
+                                        <td>3</td>
+                                        <td>B+</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Soft Computing Techniques in Water Resources</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Microcontrollers &amp; Their Applications</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                    </tr>
+                                    <tr class="sgpa-row">
+                                        <td colspan="2">SGPA: 7.81 &nbsp; Credits: 21</td>
+                                        <td>CGPA: 7.56</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Sem 8 -->
+                        <div class="semester-block">
+                            <div class="semester-title">Session: 2025-2026-2 &nbsp; Semester: 8</div>
+                            <table class="sem-table">
+                                <thead>
+                                    <tr>
+                                        <th>Course Name</th>
+                                        <th>Credits</th>
+                                        <th>Grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Major Project-II</td>
+                                        <td>4</td>
+                                        <td>B+</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Discipline</td>
+                                        <td>2</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Recommendation Systems</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Entrepreneurship &amp; Project Management</td>
+                                        <td>3</td>
+                                        <td>C+</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Intelligent Transportation Systems</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Metal Casting</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Student Counseling Cell</td>
+                                        <td>2</td>
+                                        <td>C</td>
+                                    </tr>
+                                    <tr class="sgpa-row">
+                                        <td colspan="2">SGPA: 7.22 &nbsp; Credits: 23</td>
+                                        <td>CGPA: 7.51</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div><!-- end semesters-grid -->
+                </div><!-- end grade-report-box -->
+
+            </div><!-- end profile-right -->
+        </div><!-- end profile-layout -->
+
+        <footer class="site-footer">
+            <div>Designed, Developed and Maintained by Computer Centre</div>
+            <div>Punjab Engineering College (Deemed to be University), Sector 12, Chandigarh, 160012, Email ID: <a
+                    href="mailto:helpdesk-ais@pec.edu.in">helpdesk-ais@pec.edu.in</a></div>
+        </footer>
+    </div>
+</body>
+
+</html>

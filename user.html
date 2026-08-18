@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User account | Academic Information System</title>
+    <meta name="description" content="Login to Academic Information System - Punjab Engineering College">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page-wrapper">
+    <!-- HEADER -->
+    <header class="site-header">
+        <a href="index.html" class="site-title">Academic Information System</a>
+    </header>
+
+    <!-- THREE-COLUMN LAYOUT -->
+    <div class="layout">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar-left">
+            <a href="https://accounts.google.com" target="_blank" class="btn-google-login">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                    <path d="M12.545 10.239v3.821h5.445c-.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 110-12.064c1.498 0 2.866.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0012.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-.013z"/>
+                </svg>
+                Login with PEC.EDU.IN Account
+            </a>
+            <a href="user.html" class="btn-ais-login">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+                </svg>
+                Login with AIS Credentials
+            </a>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Academic Units</div>
+                <ul>
+                    <li><a href="https://pec.ac.in/departments" target="_blank">Departments</a></li>
+                    <li><a href="https://pec.ac.in/centres" target="_blank">Centres</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Institute Administration</div>
+                <ul>
+                    <li><a href="https://pec.ac.in/board-of-governors" target="_blank">Board of Governors</a></li>
+                    <li><a href="https://pec.ac.in/senate-members" target="_blank">Senate Members</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- Access Info Box -->
+            <div class="access-info">
+                <p><strong>Access</strong></p>
+                <p><strong>Username:</strong> Student ID (SID)/JEE (Main) Application No. (Those candidates who have taken admission through PMSSS shall use their PMSSS Application No. as Username.</p>
+                <p><strong>Password:</strong> Date of Birth in the format: <strong>dd-mm-yyyy</strong> (For e.g. 20-11-2022)</p>
+                <p>Login to the Academic Information System using the Login Instructions given above.</p>
+            </div>
+
+            <!-- Login Form -->
+            <form action="user-profile.html" method="get" id="login-form">
+
+                <div class="form-group">
+                    <label class="form-label" for="username">Username <span class="required">*</span></label>
+                    <input type="text" id="username" name="username" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">Password <span class="required">*</span></label>
+                    <input type="password" id="password" name="password" class="form-input" required>
+                </div>
+
+                <!-- CAPTCHA Box -->
+                <div class="captcha-box">
+                    <div class="captcha-title">CAPTCHA</div>
+                    <div class="captcha-note">This question is for testing whether or not you are a human visitor and to prevent automated spam submissions.</div>
+
+                    <div class="captcha-image" id="captcha-display">L A 4 a b</div>
+                    <br>
+
+                    <label class="captcha-label" for="captcha-input">What code is in the image? <span class="required">*</span></label>
+                    <input type="text" id="captcha-input" name="captcha" class="form-input" required>
+                </div>
+
+                <button type="submit" class="btn-login" id="login-btn">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="white">
+                        <path d="M11 7L9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5-5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8v14z"/>
+                    </svg>
+                    Log in
+                </button>
+            </form>
+
+        </main>
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="sidebar-right">
+            <div class="right-section">
+                <div class="right-section-title">Important Links</div>
+                <ul>
+                    <li><a href="https://pec.ac.in/academics/calendar" target="_blank">Academic Calendar</a></li>
+                    <li><a href="https://pec.ac.in/programmes/ug/structure" target="_blank">Undergraduate Programmes</a></li>
+                    <li><a href="https://pec.ac.in/programmes/pg/structure" target="_blank">Postgraduate Programmes</a></li>
+                    <li><a href="https://pec.ac.in/programmes/phd" target="_blank">Doctoral Programmes</a></li>
+                    <li><a href="https://pec.ac.in/programmes/rules-procedures" target="_blank">Rules &amp; Procedures</a></li>
+                </ul>
+            </div>
+
+            <div class="right-section">
+                <div class="right-section-title">External Links</div>
+                <ul>
+                    <li><a href="https://pgscholarship.aicte-india.org/" target="_blank">AICTE PG Scholarship</a></li>
+                    <li><a href="https://www.aicte-india.org/" target="_blank">All India Council for Technical Education (AICTE)</a></li>
+                    <li><a href="https://www.ugc.ac.in/" target="_blank">University Grants Comission (UGC)</a></li>
+                </ul>
+            </div>
+        </aside>
+
+    </div><!-- end .layout -->
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div>Designed, Developed and Maintained by Computer Centre</div>
+        <div>Punjab Engineering College (Deemed to be University), Sector 12, Chandigarh, 160012, Email ID: <a href="mailto:helpdesk-ais@pec.edu.in">helpdesk-ais@pec.edu.in</a></div>
+    </footer>
+
+</div><!-- end .page-wrapper -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const captchaDisplay = document.getElementById('captcha-display');
+    const captchaInput = document.getElementById('captcha-input');
+    const loginForm = document.getElementById('login-form');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+
+    function generateCaptcha() {
+        const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let captcha = '';
+        for (let i = 0; i < 5; i++) {
+            captcha += chars[Math.floor(Math.random() * chars.length)];
+        }
+        return captcha;
+    }
+
+    let currentCaptcha = generateCaptcha();
+    captchaDisplay.textContent = currentCaptcha.split('').join(' ');
+
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const enteredCaptcha = captchaInput.value.replace(/\s+/g, '');
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        if (enteredCaptcha !== currentCaptcha) {
+            alert('Incorrect CAPTCHA. Please try again.');
+            currentCaptcha = generateCaptcha();
+            captchaDisplay.textContent = currentCaptcha.split('').join(' ');
+            captchaInput.value = '';
+            return;
+        }
+
+        if (username !== '22106027' || password !== '14-08-2002') {
+            alert('Invalid username or password.');
+            currentCaptcha = generateCaptcha();
+            captchaDisplay.textContent = currentCaptcha.split('').join(' ');
+            captchaInput.value = '';
+            return;
+        }
+
+        // Success, proceed to user-profile.html
+        window.location.href = 'user-profile.html';
+    });
+});
+</script>
+</body>
+</html>
