@@ -686,13 +686,13 @@ a:hover { text-decoration: underline; }
         min-width: 0;
     }
 
-    .semesters-grid {
+    .profile-right .semesters-grid {
         grid-template-columns: 1fr;
     }
 
     .grade-report-box {
         padding: 10px;
-        overflow-x: hidden;
+        overflow: visible;
     }
 
     .sem-table {
