@@ -10,6 +10,20 @@ body {
     font-size: 13px;
     background: #fff;
     color: #333;
+    overflow-x: hidden;
+}
+
+img, svg, video, canvas {
+    max-width: 100%;
+}
+
+button, input, select, textarea {
+    max-width: 100%;
+    font: inherit;
+}
+
+table {
+    max-width: 100%;
 }
 
 a { color: #0072bb; text-decoration: none; }
@@ -25,6 +39,7 @@ a:hover { text-decoration: underline; }
     border-radius: 4px;
     margin-bottom: 16px;
     margin-top: 10px;
+    min-width: 0;
 }
 
 .site-header a.site-title {
@@ -146,6 +161,7 @@ a:hover { text-decoration: underline; }
 /* ===== MAIN CONTENT ===== */
 .main-content {
     flex: 1;
+    min-width: 0;
     padding: 12px 18px;
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
@@ -443,6 +459,13 @@ a:hover { text-decoration: underline; }
 
 .profile-right {
     flex: 1;
+    min-width: 0;
+    padding: 14px 20px;
+}
+
+.page-content {
+    flex: 1;
+    min-width: 0;
     padding: 14px 20px;
 }
 
@@ -495,4 +518,233 @@ a:hover { text-decoration: underline; }
     font-weight: bold;
     width: 40%;
     color: #444;
+}
+
+/* ===== RESPONSIVE LAYOUT ===== */
+@media (max-width: 900px) {
+    .page-wrapper {
+        padding: 0 10px;
+    }
+
+    .sidebar-left {
+        width: 185px;
+    }
+
+    .sidebar-right {
+        width: 175px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .main-content,
+    .profile-right,
+    .page-content {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .semesters-grid {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-wrapper {
+        padding: 0 8px;
+    }
+
+    .site-header {
+        gap: 6px;
+        padding: 12px 14px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .site-header a.site-title {
+        flex: 1 1 100%;
+        padding-right: 0;
+    }
+
+    .site-header .header-tab {
+        margin-left: 0;
+    }
+
+    .site-header .logout-link {
+        margin-left: auto;
+    }
+
+    .layout,
+    .profile-layout {
+        display: block;
+    }
+
+    .sidebar-left,
+    .sidebar-right,
+    .profile-left {
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .sidebar-left,
+    .profile-left {
+        border-right: 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .sidebar-right {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        padding-top: 18px;
+    }
+
+    .right-section {
+        margin-bottom: 0;
+    }
+
+    .main-content,
+    .profile-right,
+    .page-content {
+        width: 100%;
+        padding: 16px 0;
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .logo-area {
+        padding-top: 4px;
+    }
+
+    .logo-area img {
+        height: auto;
+        max-height: 70px;
+    }
+
+    .notices-heading {
+        font-size: 18px;
+    }
+
+    .notices-table,
+    .notices-table tbody,
+    .notices-table tr,
+    .notices-table td {
+        display: block;
+        width: 100% !important;
+    }
+
+    .notices-table td {
+        padding: 7px 0;
+    }
+
+    .notices-table td.notice-link {
+        text-align: left;
+        padding-top: 0;
+    }
+
+    .download-btn {
+        white-space: normal;
+    }
+
+    .pagination {
+        flex-wrap: wrap;
+    }
+
+    .access-info,
+    .captcha-box {
+        padding: 12px;
+    }
+
+    .form-input {
+        max-width: none;
+    }
+
+    .profile-avatar {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .profile-info-table {
+        max-width: 420px;
+    }
+
+    .data-table,
+    .reg-table,
+    .student-meta,
+    .personal-details-table {
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    .data-table,
+    .reg-table {
+        min-width: 560px;
+    }
+
+    .student-meta,
+    .personal-details-table {
+        min-width: 0;
+    }
+
+    .semesters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grade-report-box {
+        padding: 10px;
+        overflow-x: hidden;
+    }
+
+    .sem-table {
+        min-width: 360px;
+    }
+
+    .site-footer {
+        overflow-wrap: anywhere;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 420px) {
+    body {
+        font-size: 12.5px;
+    }
+
+    .sidebar-right {
+        display: block;
+    }
+
+    .right-section {
+        margin-bottom: 18px;
+    }
+
+    .right-section-title {
+        font-size: 14px;
+    }
+
+    .profile-menu li a,
+    .sidebar-section ul li a,
+    .right-section ul li a {
+        font-size: 13px;
+    }
+
+    .profile-info-table {
+        font-size: 12px;
+    }
+
+    .profile-info-table td:first-child {
+        white-space: normal;
+    }
+
+    .student-meta,
+    .personal-details-table {
+        font-size: 12px;
+    }
+
+    .student-meta td,
+    .personal-details-table td {
+        padding-left: 3px;
+        padding-right: 3px;
+    }
 }
