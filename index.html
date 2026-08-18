@@ -1,201 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Information System | Academic Information System</title>
-    <meta name="description" content="Academic Information System - Punjab Engineering College (Deemed to be University), Chandigarh">
+    <meta name="description"
+        content="Academic Information System - Punjab Engineering College (Deemed to be University), Chandigarh">
     <link rel="stylesheet" href="style.css">
     <style>
         /* PDF icon inline SVG colour */
-        .pdf-icon { color: #c0392b; font-size: 13px; }
+        .pdf-icon {
+            color: #c0392b;
+            font-size: 13px;
+        }
     </style>
 </head>
+
 <body>
 
-<!-- HEADER -->
-<div class="page-wrapper">
-    <header class="site-header">
-        <a href="index.html" class="site-title">Academic Information System</a>
-    </header>
+    <!-- HEADER -->
+    <div class="page-wrapper">
+        <header class="site-header">
+            <a href="index.html" class="site-title">Academic Information System</a>
+        </header>
 
-    <!-- THREE-COLUMN LAYOUT -->
-    <div class="layout">
+        <!-- THREE-COLUMN LAYOUT -->
+        <div class="layout">
 
-        <!-- LEFT SIDEBAR -->
-        <aside class="sidebar-left">
-            <!-- Login Buttons -->
-            <a href="https://accounts.google.com" target="_blank" class="btn-google-login">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.545 10.239v3.821h5.445c-.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 110-12.064c1.498 0 2.866.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0012.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-.013z"/>
-                </svg>
-                Login with PEC.EDU.IN Account
-            </a>
-            <a href="user.html" class="btn-ais-login">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
-                </svg>
-                Login with AIS Credentials
-            </a>
+            <!-- LEFT SIDEBAR -->
+            <aside class="sidebar-left">
+                <!-- Login Buttons -->
+                <a href="https://accounts.google.com" target="_blank" class="btn-google-login">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.545 10.239v3.821h5.445c-.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 110-12.064c1.498 0 2.866.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0012.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-.013z" />
+                    </svg>
+                    Login with PEC.EDU.IN Account
+                </a>
+                <a href="user.html" class="btn-ais-login">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+                    </svg>
+                    Login with AIS Credentials
+                </a>
 
-            <!-- Academic Units -->
-            <div class="sidebar-section">
-                <div class="sidebar-section-title">Academic Units</div>
-                <ul>
-                    <li><a href="https://pec.ac.in/departments" target="_blank">Departments</a></li>
-                    <li><a href="https://pec.ac.in/centres" target="_blank">Centres</a></li>
-                </ul>
-            </div>
+                <!-- Academic Units -->
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Academic Units</div>
+                    <ul>
+                        <li><a href="https://pec.ac.in/departments" target="_blank">Departments</a></li>
+                        <li><a href="https://pec.ac.in/centres" target="_blank">Centres</a></li>
+                    </ul>
+                </div>
 
-            <!-- Institute Administration -->
-            <div class="sidebar-section">
-                <div class="sidebar-section-title">Institute Administration</div>
-                <ul>
-                    <li><a href="https://pec.ac.in/board-of-governors" target="_blank">Board of Governors</a></li>
-                    <li><a href="https://pec.ac.in/senate-members" target="_blank">Senate Members</a></li>
-                </ul>
-            </div>
-        </aside>
+                <!-- Institute Administration -->
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Institute Administration</div>
+                    <ul>
+                        <li><a href="https://pec.ac.in/board-of-governors" target="_blank">Board of Governors</a></li>
+                        <li><a href="https://pec.ac.in/senate-members" target="_blank">Senate Members</a></li>
+                    </ul>
+                </div>
+            </aside>
 
-        <!-- MAIN CONTENT -->
-        <main class="main-content">
-            <!-- Logo & Title -->
-            <div class="logo-area">
-                <img src="https://pec.ac.in/themes/contrib/pec/images/logo.png" 
-                     onerror="this.onerror=null;this.src='Pics/pec-logo.png'"
-                     alt="PEC Logo">
-                <div class="ais-title">Academic Information System</div>
-                <div class="college-name">Punjab Engineering College<br>(Deemed to be University), Chandigarh</div>
-            </div>
+            <!-- MAIN CONTENT -->
+            <main class="main-content">
+                <!-- Logo & Title -->
+                <div class="logo-area">
+                    <img src="https://pec.ac.in/themes/contrib/pec/images/logo.png"
+                        onerror="this.onerror=null;this.src='pec_centenary_logo.jpg'" alt="PEC Logo">
+                    <div class="ais-title">Academic Information System</div>
+                    <div class="college-name">Punjab Engineering College<br>(Deemed to be University), Chandigarh</div>
+                </div>
 
-            <!-- Notices -->
-            <h2 class="notices-heading">Notices</h2>
-            <table class="notices-table">
-                <tbody>
-                    <tr>
-                        <td class="notice-text">Change of Branch Orders for B.Tech. 2025-26</td>
-                        <td class="notice-link">
-                            <a class="download-btn" href="https://pec.edu.in/sites/default/files/notices/Branch%20Change%20Order%202025%20Batch.pdf" target="_blank">
-                                📄 Download Notice
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="notice-text">Re-appear examinations of 25-26-2 for F-Grade of UG (2nd, 4th, 6th &amp; 8th sem) and PG (2nd semester) students.</td>
-                        <td class="notice-link">
-                            <a class="download-btn" href="https://pec.edu.in/sites/default/files/notices/Re-appear%20examinations%20of%2025-26-2%20for%20F-Grade%20of%20UG.pdf" target="_blank">
-                                📄 Download Notice
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="notice-text">Schedule for Re-appear examinations of UG (2nd, 4th, 6th &amp; 8th sem) and PG (2nd semester) students of 25-26-2 semester.</td>
-                        <td class="notice-link">
-                            <a class="download-btn" href="https://pec.edu.in/sites/default/files/notices/Schedule%20of%20Re-appear%20Examination.pdf" target="_blank">
-                                📄 Download Notice
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="notice-text">NOTICE FOR STUDENTS GOING TO ENTER B.TECH. 3rd SEMESTER (CHANGE OF BRANCH)</td>
-                        <td class="notice-link">
-                            <a class="download-btn" href="https://pec.edu.in/sites/default/files/notices/Change%20of%20Branch%20Notice%20and%20Proforma%20UG%202025%20Batch.pdf" target="_blank">
-                                📄 Download Notice
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="notice-text">Re-appear Examination of 25-26-1 for F-Gradeof UG (1st Sem) and PG (1st Sem)</td>
-                        <td class="notice-link">
-                            <a class="download-btn" href="https://pec.edu.in/sites/default/files/notices/Re-appear%20Examination%20of%2025-26-1.pdf" target="_blank">
-                                📄 Download Notice
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="notice-text">ACADEMIC CALENDAR FOR ODD SEMESTER 2025-26 (25261) For All old UG (3rd, 5th &amp; 7th sem), PG (3rd sem) &amp; Ph. D</td>
-                        <td class="notice-link">
-                            <a class="download-btn" href="https://pec.edu.in/sites/default/files/notices/APPROVED%20ACADEMIC%20CALENDAR%2025261_0.pdf" target="_blank">
-                                📄 Download Notice
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="notice-text">Revised Academic Calendar of 24252 Semester (Pending Activities)</td>
-                        <td class="notice-link">
-                            <a class="download-btn" href="https://pec.edu.in/sites/default/files/notices/Revised%20Academic%20Calendar-%2024252%20%28Pending%20activities-%29.pdf" target="_blank">
-                                📄 Download Notice
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="notice-text">Change of Branch Notice for B.Tech. 2024-25</td>
-                        <td class="notice-link">
-                            <a class="download-btn" href="https://pec.edu.in/sites/default/files/notices/Change%20of%20Branch%20for%20B.Tech_.%202024-25.pdf" target="_blank">
-                                📄 Download Notice
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="notice-text">Revised Schedule for Course Registration and Fee Payment</td>
-                        <td class="notice-link">
-                            <a class="download-btn" href="https://pec.edu.in/sites/default/files/notices/Revised%20Schedule%20for%20Course%20Registration%20and%20Fee%20Payment.pdf" target="_blank">
-                                📄 Download Notice
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="notice-text">Registration of UG 3rd year students for 6th semester (24-25-2 semester)</td>
-                        <td class="notice-link">
-                            <a class="download-btn" href="https://pec.edu.in/sites/default/files/notices/Internship%2C%20course%20work%20registration%2024-25-2%20semester.pdf" target="_blank">
-                                📄 Download Notice
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                <!-- Notices -->
+                <h2 class="notices-heading">Notices</h2>
+                <table class="notices-table">
+                    <tbody>
+                        <tr>
+                            <td class="notice-text">Change of Branch Orders for B.Tech. 2025-26</td>
+                            <td class="notice-link">
+                                <a class="download-btn"
+                                    href="https://pec.edu.in/sites/default/files/notices/Branch%20Change%20Order%202025%20Batch.pdf"
+                                    target="_blank">
+                                    📄 Download Notice
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="notice-text">Re-appear examinations of 25-26-2 for F-Grade of UG (2nd, 4th, 6th
+                                &amp; 8th sem) and PG (2nd semester) students.</td>
+                            <td class="notice-link">
+                                <a class="download-btn"
+                                    href="https://pec.edu.in/sites/default/files/notices/Re-appear%20examinations%20of%2025-26-2%20for%20F-Grade%20of%20UG.pdf"
+                                    target="_blank">
+                                    📄 Download Notice
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="notice-text">Schedule for Re-appear examinations of UG (2nd, 4th, 6th &amp; 8th
+                                sem) and PG (2nd semester) students of 25-26-2 semester.</td>
+                            <td class="notice-link">
+                                <a class="download-btn"
+                                    href="https://pec.edu.in/sites/default/files/notices/Schedule%20of%20Re-appear%20Examination.pdf"
+                                    target="_blank">
+                                    📄 Download Notice
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="notice-text">NOTICE FOR STUDENTS GOING TO ENTER B.TECH. 3rd SEMESTER (CHANGE OF
+                                BRANCH)</td>
+                            <td class="notice-link">
+                                <a class="download-btn"
+                                    href="https://pec.edu.in/sites/default/files/notices/Change%20of%20Branch%20Notice%20and%20Proforma%20UG%202025%20Batch.pdf"
+                                    target="_blank">
+                                    📄 Download Notice
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="notice-text">Re-appear Examination of 25-26-1 for F-Gradeof UG (1st Sem) and PG
+                                (1st Sem)</td>
+                            <td class="notice-link">
+                                <a class="download-btn"
+                                    href="https://pec.edu.in/sites/default/files/notices/Re-appear%20Examination%20of%2025-26-1.pdf"
+                                    target="_blank">
+                                    📄 Download Notice
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="notice-text">ACADEMIC CALENDAR FOR ODD SEMESTER 2025-26 (25261) For All old UG
+                                (3rd, 5th &amp; 7th sem), PG (3rd sem) &amp; Ph. D</td>
+                            <td class="notice-link">
+                                <a class="download-btn"
+                                    href="https://pec.edu.in/sites/default/files/notices/APPROVED%20ACADEMIC%20CALENDAR%2025261_0.pdf"
+                                    target="_blank">
+                                    📄 Download Notice
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="notice-text">Revised Academic Calendar of 24252 Semester (Pending Activities)
+                            </td>
+                            <td class="notice-link">
+                                <a class="download-btn"
+                                    href="https://pec.edu.in/sites/default/files/notices/Revised%20Academic%20Calendar-%2024252%20%28Pending%20activities-%29.pdf"
+                                    target="_blank">
+                                    📄 Download Notice
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="notice-text">Change of Branch Notice for B.Tech. 2024-25</td>
+                            <td class="notice-link">
+                                <a class="download-btn"
+                                    href="https://pec.edu.in/sites/default/files/notices/Change%20of%20Branch%20for%20B.Tech_.%202024-25.pdf"
+                                    target="_blank">
+                                    📄 Download Notice
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="notice-text">Revised Schedule for Course Registration and Fee Payment</td>
+                            <td class="notice-link">
+                                <a class="download-btn"
+                                    href="https://pec.edu.in/sites/default/files/notices/Revised%20Schedule%20for%20Course%20Registration%20and%20Fee%20Payment.pdf"
+                                    target="_blank">
+                                    📄 Download Notice
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="notice-text">Registration of UG 3rd year students for 6th semester (24-25-2
+                                semester)</td>
+                            <td class="notice-link">
+                                <a class="download-btn"
+                                    href="https://pec.edu.in/sites/default/files/notices/Internship%2C%20course%20work%20registration%2024-25-2%20semester.pdf"
+                                    target="_blank">
+                                    📄 Download Notice
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
-            <!-- Pagination -->
-            <div class="pagination">
-                <span class="current">1</span>
-                <a href="#">2</a>
-                <a href="#">next »</a>
-                <a href="#">last »</a>
-            </div>
-        </main>
+                <!-- Pagination -->
+                <div class="pagination">
+                    <span class="current">1</span>
+                    <a href="#">2</a>
+                    <a href="#">next »</a>
+                    <a href="#">last »</a>
+                </div>
+            </main>
 
-        <!-- RIGHT SIDEBAR -->
-        <aside class="sidebar-right">
-            <div class="right-section">
-                <div class="right-section-title">Important Links</div>
-                <ul>
-                    <li><a href="https://pec.ac.in/academics/calendar" target="_blank">Academic Calendar</a></li>
-                    <li><a href="https://pec.ac.in/programmes/ug/structure" target="_blank">Undergraduate Programmes</a></li>
-                    <li><a href="https://pec.ac.in/programmes/pg/structure" target="_blank">Postgraduate Programmes</a></li>
-                    <li><a href="https://pec.ac.in/programmes/phd" target="_blank">Doctoral Programmes</a></li>
-                    <li><a href="https://pec.ac.in/programmes/rules-procedures" target="_blank">Rules &amp; Procedures</a></li>
-                </ul>
-            </div>
+            <!-- RIGHT SIDEBAR -->
+            <aside class="sidebar-right">
+                <div class="right-section">
+                    <div class="right-section-title">Important Links</div>
+                    <ul>
+                        <li><a href="https://pec.ac.in/academics/calendar" target="_blank">Academic Calendar</a></li>
+                        <li><a href="https://pec.ac.in/programmes/ug/structure" target="_blank">Undergraduate
+                                Programmes</a></li>
+                        <li><a href="https://pec.ac.in/programmes/pg/structure" target="_blank">Postgraduate
+                                Programmes</a></li>
+                        <li><a href="https://pec.ac.in/programmes/phd" target="_blank">Doctoral Programmes</a></li>
+                        <li><a href="https://pec.ac.in/programmes/rules-procedures" target="_blank">Rules &amp;
+                                Procedures</a></li>
+                    </ul>
+                </div>
 
-            <div class="right-section">
-                <div class="right-section-title">External Links</div>
-                <ul>
-                    <li><a href="https://pgscholarship.aicte-india.org/" target="_blank">AICTE PG Scholarship</a></li>
-                    <li><a href="https://www.aicte-india.org/" target="_blank">All India Council for Technical Education (AICTE)</a></li>
-                    <li><a href="https://www.ugc.ac.in/" target="_blank">University Grants Comission (UGC)</a></li>
-                </ul>
-            </div>
-        </aside>
+                <div class="right-section">
+                    <div class="right-section-title">External Links</div>
+                    <ul>
+                        <li><a href="https://pgscholarship.aicte-india.org/" target="_blank">AICTE PG Scholarship</a>
+                        </li>
+                        <li><a href="https://www.aicte-india.org/" target="_blank">All India Council for Technical
+                                Education (AICTE)</a></li>
+                        <li><a href="https://www.ugc.ac.in/" target="_blank">University Grants Comission (UGC)</a></li>
+                    </ul>
+                </div>
+            </aside>
 
-    </div><!-- end .layout -->
+        </div><!-- end .layout -->
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <div>Designed, Developed and Maintained by Computer Centre</div>
-        <div>Punjab Engineering College (Deemed to be University), Sector 12, Chandigarh, 160012, Email ID: <a href="mailto:helpdesk-ais@pec.edu.in">helpdesk-ais@pec.edu.in</a></div>
-    </footer>
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <div>Designed, Developed and Maintained by Computer Centre</div>
+            <div>Punjab Engineering College (Deemed to be University), Sector 12, Chandigarh, 160012, Email ID: <a
+                    href="mailto:helpdesk-ais@pec.edu.in">helpdesk-ais@pec.edu.in</a></div>
+        </footer>
 
-</div><!-- end .page-wrapper -->
+    </div><!-- end .page-wrapper -->
 
 </body>
+
 </html>
