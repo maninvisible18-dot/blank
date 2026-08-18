@@ -1,16 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add & Drop Courses | Academic Information System</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .alert-box { padding: 8px 14px; margin-bottom: 8px; font-size: 13px; border-radius: 2px; }
-        .alert-red  { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
-        .alert-pink { background: #fce4ec; color: #880e4f; border: 1px solid #f48fb1; }
+        .alert-box {
+            padding: 8px 14px;
+            margin-bottom: 8px;
+            font-size: 13px;
+            border-radius: 2px;
+        }
 
-        .reg-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 12.5px; }
+        .alert-red {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .alert-pink {
+            background: #fce4ec;
+            color: #880e4f;
+            border: 1px solid #f48fb1;
+        }
+
+        .reg-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            font-size: 12.5px;
+        }
+
         .reg-table th {
             background: #f5f5f5;
             padding: 7px 10px;
@@ -19,11 +41,13 @@
             font-weight: bold;
             color: #444;
         }
+
         .reg-table td {
             padding: 7px 10px;
             border-bottom: 1px solid #eee;
             vertical-align: middle;
         }
+
         .btn-print {
             background: #5cb85c;
             color: #fff;
@@ -34,102 +58,125 @@
             border-radius: 3px;
             white-space: nowrap;
         }
-        .btn-print:hover { background: #4cae4c; }
+
+        .btn-print:hover {
+            background: #4cae4c;
+        }
     </style>
 </head>
+
 <body>
-<div class="page-wrapper">
-    <header class="site-header">
-        <a href="index.html" class="site-title">Academic Information System</a>
-        <a href="user-profile.html" class="header-tab">Profile</a>
-        <a href="index.html" class="logout-link">Log out</a>
-    </header>
+    <div class="page-wrapper">
+        <header class="site-header">
+            <a href="index.html" class="site-title">Academic Information System</a>
+            <a href="user-profile.html" class="header-tab">Profile</a>
+            <a href="index.html" class="logout-link">Log out</a>
+        </header>
 
-    <div class="profile-layout">
-        <div class="profile-left">
-            <div class="profile-avatar">V</div>
-            <table class="profile-info-table">
-                <tr><td>Name</td><td>Vishwas Kisaniya</td></tr>
-                <tr><td>SID</td><td>22106027</td></tr>
-                <tr><td>Branch</td><td>Computer Science and Engineering (Data Science)</td></tr>
-            </table>
-            <ul class="profile-menu">
-                <li><a href="student-fee-payment.html">Fee Payment</a></li>
-                <li><a href="academic-course-registration.html">Course Registration</a></li>
-                <li><a href="add-drop-courses.html"><strong>Add &amp; Drop Courses</strong></a></li>
-                <li><a href="convocation-entry-pass.html">Convocation Entry Pass Form</a></li>
-                <li><a href="grade-report.html">Grade Report</a></li>
-                <li><a href="grade-report-honours.html">Grade Report Honours - Minors</a></li>
-                <li><a href="notices.html">Notices</a></li>
-                <li><a href="feedback.html">Feedback</a></li>
-                <li><a href="institute-feedback.html">Institute Facilities Feedback</a></li>
-                <li><a href="fee-receipt.html">Fee Receipt</a></li>
-            </ul>
-            <a href="change-password.html" class="btn-change-password">Change Password</a>
+        <div class="profile-layout">
+            <div class="profile-left">
+                <div class="profile-avatar">V</div>
+                <table class="profile-info-table">
+                    <tr>
+                        <td>Name</td>
+                        <td>Vishwas Kisaniya</td>
+                    </tr>
+                    <tr>
+                        <td>SID</td>
+                        <td>22106027</td>
+                    </tr>
+                    <tr>
+                        <td>Branch</td>
+                        <td>Computer Science and Engineering (Data Science)</td>
+                    </tr>
+                </table>
+                <ul class="profile-menu">
+                    <li><a href="student-fee-payment.html">Fee Payment</a></li>
+                    <li><a href="academic-course-registration.html">Course Registration</a></li>
+                    <li><a href="add-drop-courses.html"><strong>Add &amp; Drop Courses</strong></a></li>
+                    <li><a href="convocation-entry-pass.html">Convocation Entry Pass Form</a></li>
+                    <li><a href="grade-report.html">Grade Report</a></li>
+                    <li><a href="grade-report-honours.html">Grade Report Honours - Minors</a></li>
+                    <li><a href="notices.html">Notices</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="institute-feedback.html">Institute Facilities Feedback</a></li>
+
+                </ul>
+                <a href="change-password.html" class="btn-change-password">Change Password</a>
+            </div>
+
+            <div class="profile-right">
+                <div class="alert-box alert-red">No Courses are floated for you currently!</div>
+                <div class="alert-box alert-pink">Add/Drop Facility for the Current Semester is Closed.</div>
+
+                <table class="reg-table">
+                    <thead>
+                        <tr>
+                            <th>Semester</th>
+                            <th>Courses Registered</th>
+                            <th>Print</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2022-2023-1</td>
+                            <td>CH1101, ES1101, ES1201, ES1401, MA1101, OR1101</td>
+                            <td><button class="btn-print" onclick="window.print()">Print Registration Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2022-2023-2</td>
+                            <td>ES1301, ES1501, GS1101, GS1201, HS1101, MA1301, PY1201</td>
+                            <td><button class="btn-print" onclick="window.print()">Print Registration Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2023-2024-1</td>
+                            <td>DS1301, DS1302, DS1303, DS7001, ES1701, EC6032</td>
+                            <td><button class="btn-print" onclick="window.print()">Print Registration Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2023-2024-2</td>
+                            <td>DS1401, DS1402, DS1403, ES2301, EC0013, PRO306</td>
+                            <td><button class="btn-print" onclick="window.print()">Print Registration Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2024-2025-1</td>
+                            <td>DS1501, DS1502, DS1503, DS1504, DS2504, DS2505</td>
+                            <td><button class="btn-print" onclick="window.print()">Print Registration Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2024-2025-2</td>
+                            <td>DS1551A, DS1552B, DS1553C</td>
+                            <td><button class="btn-print" onclick="window.print()">Print Registration Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2025-2026-1</td>
+                            <td>DS7701, DS2702, DS2705, HS2711, CV6701, EC6035</td>
+                            <td><button class="btn-print" onclick="window.print()">Print Registration Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2025-2026-2</td>
+                            <td>DS7801, DEC101, DS2803, HS2802, CV6801, MM6009, PRF308</td>
+                            <td><button class="btn-print" onclick="window.print()">Print Registration Details</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
-        <div class="profile-right">
-            <div class="alert-box alert-red">No Courses are floated for you currently!</div>
-            <div class="alert-box alert-pink">Add/Drop Facility for the Current Semester is Closed.</div>
-
-            <table class="reg-table">
-                <thead>
-                    <tr>
-                        <th>Semester</th>
-                        <th>Courses Registered</th>
-                        <th>Print</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2022-2023-1</td>
-                        <td>CH1101, ES1101, ES1201, ES1401, MA1101, OR1101</td>
-                        <td><button class="btn-print" onclick="window.print()">Print Registration Details</button></td>
-                    </tr>
-                    <tr>
-                        <td>2022-2023-2</td>
-                        <td>ES1301, ES1501, GS1101, GS1201, HS1101, MA1301, PY1201</td>
-                        <td><button class="btn-print" onclick="window.print()">Print Registration Details</button></td>
-                    </tr>
-                    <tr>
-                        <td>2023-2024-1</td>
-                        <td>DS1301, DS1302, DS1303, DS7001, ES1701, EC6032</td>
-                        <td><button class="btn-print" onclick="window.print()">Print Registration Details</button></td>
-                    </tr>
-                    <tr>
-                        <td>2023-2024-2</td>
-                        <td>DS1401, DS1402, DS1403, ES2301, EC0013, PRO306</td>
-                        <td><button class="btn-print" onclick="window.print()">Print Registration Details</button></td>
-                    </tr>
-                    <tr>
-                        <td>2024-2025-1</td>
-                        <td>DS1501, DS1502, DS1503, DS1504, DS2504, DS2505</td>
-                        <td><button class="btn-print" onclick="window.print()">Print Registration Details</button></td>
-                    </tr>
-                    <tr>
-                        <td>2024-2025-2</td>
-                        <td>DS1551A, DS1552B, DS1553C</td>
-                        <td><button class="btn-print" onclick="window.print()">Print Registration Details</button></td>
-                    </tr>
-                    <tr>
-                        <td>2025-2026-1</td>
-                        <td>DS7701, DS2702, DS2705, HS2711, CV6701, EC6035</td>
-                        <td><button class="btn-print" onclick="window.print()">Print Registration Details</button></td>
-                    </tr>
-                    <tr>
-                        <td>2025-2026-2</td>
-                        <td>DS7801, DEC101, DS2803, HS2802, CV6801, MM6009, PRF308</td>
-                        <td><button class="btn-print" onclick="window.print()">Print Registration Details</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <footer class="site-footer">
+            <div>Designed, Developed and Maintained by Computer Centre</div>
+            <div>Punjab Engineering College (Deemed to be University), Sector 12, Chandigarh, 160012, Email ID: <a
+                    href="mailto:helpdesk-ais@pec.edu.in">helpdesk-ais@pec.edu.in</a></div>
+        </footer>
     </div>
-
-    <footer class="site-footer">
-        <div>Designed, Developed and Maintained by Computer Centre</div>
-        <div>Punjab Engineering College (Deemed to be University), Sector 12, Chandigarh, 160012, Email ID: <a href="mailto:helpdesk-ais@pec.edu.in">helpdesk-ais@pec.edu.in</a></div>
-    </footer>
-</div>
 </body>
+
 </html>
